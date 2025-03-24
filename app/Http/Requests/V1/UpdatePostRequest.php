@@ -4,7 +4,7 @@ namespace App\Http\Requests\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUserRequest extends FormRequest
+class UpdatePostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,10 +21,16 @@ class StoreUserRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name' => ['required', 'string'],
-            'email' => ['required', 'email'],
-            'password' => ['required', 'min:8', 'letters', 'mixedCase', 'numbers', 'symbols', 'confirmed']
-        ];
+        if(request()->method() == "PUT") {
+            return [
+                'content' => ['required'],
+                'status' => ['required', Rule::in(['public', 'private'])]
+            ];
+        } else {
+            return [
+                'content' => ['sometimes', 'required'],
+                'status' => ['sometimes', 'required', Rule::in(['public', 'private'])]
+            ];
+        }
     }
 }

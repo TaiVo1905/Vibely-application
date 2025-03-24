@@ -20,6 +20,7 @@ class UserResource extends JsonResource
             'phoneNumber' => $this->phone_number,
             'imageUrl' => $this->image_url,
             'address' => $this->address,
+            'includePost' => PostResource::collection($this->whenLoaded('posts')),
         ];
     }
 }

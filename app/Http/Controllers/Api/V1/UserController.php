@@ -24,6 +24,9 @@ class UserController extends Controller
 
         $users = User::where($filterItems);
 
+        if($request->query('includePosts')) {
+            $users = $users->with('includePosts');
+        }
 
         return new UserCollection($users->paginate());
     }
@@ -50,7 +53,7 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        $user->update($request->all());
+        return new UserResource($user->update($request->all()));
     }
 
     /**
@@ -58,6 +61,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->delete();
+        return $user->delete();
     }
 }

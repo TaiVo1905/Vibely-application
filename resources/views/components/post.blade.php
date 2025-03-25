@@ -9,7 +9,6 @@
 <body>
 
     <div class="post-container">
-        <!-- Header -->
         <div class="post-header">
             <div class="user-info">
                 <img src="{{ asset('images/icon/avatar.png') }}" alt="Avatar" class="user-avatar">

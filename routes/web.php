@@ -2,6 +2,30 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('hello');
+
+
+Route::get('chat', function () {
+    return view('components.chat');
+});
+Route::get('chats', function () {
+    return view('components.chats');
+});
+Route::get('con', function () {
+    return view('components.conversation');
+});
+
+Route::get('b1', function () {
+    return view('components.buble_1');
+});
+
+Route::get('b2', function () {
+    return view('components.buble_2');
+});
+
+Route::get('set', function () {
+    return view('components.setting');
+});
+
+Route::get('pri', function () {
+    return view('components.privacy');
 });

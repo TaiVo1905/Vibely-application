@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.header {
+    min-width: 1500px;
+    min-height: 111px;
+    border: 1px solid black;
+}
+
+.layout-wrapper {
+    display: flex;
+    min-width: 1500px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.sidebar {
+    min-width: 84px;
+    min-height: 580px;
+    border: 1px solid black;
+    margin-right: 56px;
+}
+
+.content {
+    display: flex;
+    gap: 48px;
+}
+
+.message-list {
+    min-width: 419px;
+    min-height: 799px;
+    border: 1px solid aqua;
+}
+
+.chat-content {
+    min-width: 840px;
+    min-height: 799px;
+    border: 1px solid black;
+}

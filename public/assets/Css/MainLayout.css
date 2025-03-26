@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.header {
+    min-width: 1500px;
+    min-height: 111px;
+    border: 1px solid black;
+}
+
+.layout-wrapper {
+    display: flex;
+    min-width: 1500px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.sidebar {
+    min-width: 84px;
+    min-height: 580px;
+    border: 1px solid black;
+    margin-right: 40px;
+}
+
+.content {
+    display: flex;
+    gap: 27px;
+}
+
+.activity-panel {
+    min-width: 419px;
+    min-height: 799px;
+    border: 1px solid red;
+}
+
+.post-container {
+    min-width: 601px;
+    min-height: 799px;
+    border: 1px solid blue;
+}
+
+.chat-section {
+    min-width: 291px;
+    min-height: 326px;
+    border: 1px solid red;
+}

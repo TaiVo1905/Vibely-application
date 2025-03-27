@@ -24,7 +24,6 @@ class PostResource extends JsonResource
             'shares' => ShareResource::collection($this->whenLoaded('includeShares')),
             'postImages' => PostImageResource::collection($this->whenLoaded('includePostImages')),
             'comments' => CommentResource::collection($this->whenLoaded('includeComments')),
-            'postReplies' => ReplyResource::collection($this->whenLoaded('includePostReplies'))
         ];
     }
 }

@@ -22,9 +22,16 @@ class StoreMessageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'send_id' => ['required'],
-            'receiver_id' => ['required'],
+            'sendId' => ['required'],
+            'receiverId' => ['required'],
             'content' => ['required']
         ];
+    }
+
+    protected function prepareForValidation() {
+        $this->merge([
+            'send_id' => $this->sendId,
+            'receiver_id' => $this->receiverId,
+        ]);
     }
 }

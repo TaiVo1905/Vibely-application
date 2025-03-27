@@ -4,7 +4,7 @@ namespace App\Http\Requests\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePostRequest extends FormRequest
+class StoreLikeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,15 +22,15 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'posterId' => ['required'],
-            'content' => ['required'],
-            'status' => ['required', Rule::in(['public', 'private'])]
+            'postId' => ['required'],
+            'userLikeId' => ['required']
         ];
     }
 
     protected function prepareForValidation() {
         $this->merge([
-            'post_id' => $this->posterId,
+            'post_id' => $this->postId,
+            'user_like_id' => $this->userLikeId,
         ]);
     }
 }

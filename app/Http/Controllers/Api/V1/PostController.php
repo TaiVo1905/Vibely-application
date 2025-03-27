@@ -27,8 +27,7 @@ class PostController extends Controller
                     'includeLikes',
                     'includeShares',
                     'includePostImages',
-                    'includeComments',
-                    'includeReplies'];
+                    'includeComments',];
 
         foreach ($includes as $include) {
             if($request->query($include)) {

@@ -43,3 +43,11 @@ Route::get('set', function () {
 Route::get('pri', function () {
     return view('components.privacy');
 });
+
+Route::get('signin', function () {
+    return view('pages.sign_in');
+});
+
+Route::get('signup', function () {
+    return view('pages.sign_up');
+});

@@ -1,48 +1,17 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 27px;
-}
-
-.header {
-    min-width: 1500px;
-    min-height: 111px;
-    border: 1px solid black;
-}
-
-.layout-wrapper {
-    display: flex;
-    min-width: 1500px;
-    height: auto;
-    border: 1px solid black;
-}
-
-.sidebar {
-    min-width: 84px;
-    min-height: 580px;
-    border: 1px solid black;
-    margin-right: 40px;
-}
-
 .content {
-    display: flex;
-    gap: 27px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 1.5rem;
+    margin-left: 70px;
+    padding: 1.5rem;
 }
 
-.activity-panel {
-    min-width: 419px;
-    min-height: 799px;
-    border: 1px solid red;
-}
-
-.post-container {
-    min-width: 601px;
-    min-height: 799px;
-    border: 1px solid blue;
-}
-
+.activity-panel,
+.post-container,
 .chat-section {
-    min-width: 291px;
-    min-height: 326px;
-    border: 1px solid red;
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

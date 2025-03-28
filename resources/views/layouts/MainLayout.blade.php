@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.MasterLayout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('assets/Css/MainLayout.css') }}">
-    <title>Main Layout</title>
-</head>
+@section('title', 'Home')
 
-<body>
-    <main class="container">
-        <header class="header"></header>
-        <div class="layout-wrapper">
-            <aside class="sidebar"></aside>
-            <section class="content">
-                <div class="activity-panel"></div>
-                <div class="post-container"></div>
-                <div class="chat-section"></div>
-            </section>
-        </div>
-    </main>
-</body>
+@section('search-placeholder', 'Search for creators, inspirations, travel video projects...')
 
-</html>
+@section('styles')
+<link rel="stylesheet" href="{{ asset('assets/Css/MainLayout.css') }}">
+@endsection
+
+@section('content')
+<div class="activity-panel">
+    <h2>Recent Activity</h2>
+    <!-- Activity content will be loaded here -->
+</div>
+
+<div class="post-container">
+    @yield('main-content')
+</div>
+
+<div class="chat-section">
+    <h2>Messages</h2>
+    <!-- Chat content will be loaded here -->
+</div>
+@endsection

@@ -43,3 +43,7 @@ Route::get('set', function () {
 Route::get('pri', function () {
     return view('components.privacy');
 });
+
+Route::get('/mt', function () {
+    return view('layouts.MasterLayout');
+});

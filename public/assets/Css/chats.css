@@ -2,19 +2,16 @@ body {
     background-color: #F5F5F5;
 }
 
-.content {
-    width: 20%;
+.chat-content {
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #ffffff; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding: 20px; 
 }
 
 h2 {
     font-size: 25px;
+    margin: 0;
 }
 
 .title {
@@ -22,6 +19,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .title img {
@@ -29,30 +27,34 @@ h2 {
     height: 40px;
 }
 
-
 .tab-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 20px;
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
 .tab {
     color: #9DA4B0;
-    position: relative; 
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 10px;
 }
 
 .tab-active, .tab:hover {
-    font-weight: 800;
-    padding-bottom: 5px;
+    font-weight: 600;
+    color: #000;
 }
 
 .tab-active {
-    border-bottom: 4px solid black;
+    border-bottom: 2px solid #000;
 }
 
 .tab:hover {
-    border-bottom: 4px solid #9DA4B0;
+    border-bottom: 2px solid #9DA4B0;
 }
 
 .tab-request {
@@ -64,13 +66,21 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-height: 400px; 
+    max-height: calc(100vh - 250px);
     overflow-y: auto; 
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-    padding: 10px; 
+    scrollbar-width: thin;
+    padding: 10px 0; 
 }
 
 .chats::-webkit-scrollbar {
-    display: none; 
+    width: 4px;
+}
+
+.chats::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chats::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
 }

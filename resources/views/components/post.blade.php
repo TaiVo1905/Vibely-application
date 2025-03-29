@@ -20,7 +20,7 @@
             <img src="{{ asset('images/icon/gach.png') }}" width="20">
         </div>
 
-        <img src="{{ asset('image/icon/postimage.png') }}" alt="Post Image" class="post-image">
+        <img src="{{ asset('images/icon/postimage.png') }}" alt="Post Image" class="post-image">
 
         <div class="post-actions">
             <div class="icons">

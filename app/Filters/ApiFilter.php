@@ -24,7 +24,7 @@ class ApiFilter {
 
             foreach($operators as $operator) {
                 if(isset($query[$operator])){
-                    $eloQuery[] = [$column, $operatorMap[$operator], $operator == 'ceq' ? "%{$query[$operator]}%" : $query[$operator]];
+                    $eloQuery[] = [$column, $this->operatorMap[$operator], $operator == 'ceq' ? "%{$query[$operator]}%" : $query[$operator]];
                 }
             }
         }

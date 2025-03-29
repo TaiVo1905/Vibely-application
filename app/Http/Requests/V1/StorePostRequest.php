@@ -3,6 +3,7 @@
 namespace App\Http\Requests\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StorePostRequest extends FormRequest
 {
@@ -30,7 +31,7 @@ class StorePostRequest extends FormRequest
 
     protected function prepareForValidation() {
         $this->merge([
-            'post_id' => $this->posterId,
+            'poster_id' => $this->posterId,
         ]);
     }
 }

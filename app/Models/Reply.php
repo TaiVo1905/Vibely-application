@@ -12,7 +12,11 @@ class Reply extends Model
         'content'
     ];
 
-    public function Replier() {
-        $this->belongsTo(User::class);
+    public function comment() {
+        $this->belongsTo(Comment::class, 'comment_id');
+    }
+
+    public function replier() {
+        $this->belongsTo(User::class, 'replier_id');
     }
 }

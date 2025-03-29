@@ -17,7 +17,7 @@ class ShareResource extends JsonResource
         return [
             'postId' => $this->post_id,
             'userShareId' => $this->user_share_id,
-            'UserShare' => new UserResource($this->whenLoaded('includeSharer'))
+            'UserShare' => new UserResource($this->whenLoaded('user'))
 
         ];
     }

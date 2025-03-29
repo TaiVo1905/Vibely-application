@@ -23,7 +23,7 @@ class MessageController extends Controller
 
         $messages = Message::where($filterItems);
 
-        return new MessageCollection($messages->paginate());
+        return new MessageCollection($messages->with(['sender', 'receiver'])->paginate());
     }
 
     /**
@@ -57,4 +57,6 @@ class MessageController extends Controller
     {
         $message->delete();
     }
+
+
 }

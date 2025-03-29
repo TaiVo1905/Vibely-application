@@ -12,11 +12,11 @@ class Comment extends Model
         'commenter_id'
     ];
 
-    public function Post() {
-        return $this->belongsTo(Post::class);
+    public function post() {
+        return $this->belongsTo(Post::class, 'post_id');
     }
 
-    public function Comments() {
-        return $this->hasMany(Comment::class);
+    public function replies() {
+        return $this->hasMany(Reply::class, 'replier_id');
     }
 }

@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Filters\V1\CommentFilter;
 use App\Models\Comment;
 use App\Http\Resources\V1\CommentCollection;
+use App\Http\Resources\V1\CommentResource;
 use App\Http\Requests\V1\StoreCommentRequest;
+use App\Http\Requests\V1\UpdateCommentRequest;
 
 
 class CommentController extends Controller
@@ -17,20 +19,9 @@ class CommentController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new CommentFilter();
+        $comments = Comment::where([['post_id', '=', $request->post]]);
 
-        $filterItems = $filter->transform($request);
-
-        $comments = Comment::where($filterItems);
-
-        $includes = ['includeCommenter',
-                    'includeReplies'];
-
-        foreach ($includes as $include) {
-            if($request->query($include)) {
-                $comments = $comments->with($include);
-            }
-        }
+        $comments->with('commenter');
 
         return new CommentCollection($comments->paginate());
     }
@@ -40,7 +31,7 @@ class CommentController extends Controller
      */
     public function store(StoreCommentRequest $request)
     {
-        return new StoreCommentRequest(Comment::create($request->all()));
+        return new CommentResource(Comment::create($request->all()));
     }
 
     /**
@@ -48,13 +39,13 @@ class CommentController extends Controller
      */
     public function show(Comment $comment)
     {
-        return new CommentResource($comment);
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreCommentRequest $request, Comment $comment)
+    public function update(UpdateCommentRequest $request, Comment $comment)
     {
         return new CommentResource($comment->update($request->all()));
     }

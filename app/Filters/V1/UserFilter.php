@@ -8,12 +8,12 @@ use App\Filters\ApiFilter;
 class UserFilter extends ApiFilter {
 
     protected $safeParams = [
-        'name' => 'eq',
-        'email' => 'eq',
-        'phone_number' => 'eq',
-        'image_url' => 'eq',
-        'address' => 'eq',
-        'password' => 'eq',
+        'name' => ['eq'],
+        'email' => ['eq'],
+        'phoneNumber' => ['eq'],
+        'imageUrl' => ['eq'],
+        'address' => ['eq'],
+        'password' => ['eq'],
     ];
 
     protected $columnMap = [

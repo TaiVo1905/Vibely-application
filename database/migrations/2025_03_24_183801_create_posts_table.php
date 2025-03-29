@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_post_id')->constrained('users');
+            $table->foreignId('poster_id')->constrained('users');
             $table->text('content');
             $table->enum('status', ['public', 'private'])->default('public');
             $table->timestamps();

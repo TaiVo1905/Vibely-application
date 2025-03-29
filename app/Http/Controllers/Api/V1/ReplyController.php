@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Filters\V1\ReplyFilter;
 use App\Models\Reply;
 use App\Http\Resources\V1\ReplyCollection;
 use App\Http\Requests\V1\StoreReplyRequest;
@@ -17,17 +16,9 @@ class ReplyController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new ReplyFilter();
+        $replies = Reply::where([['comment_id', '=', $request->comment]]);
 
-        $filterItems = $filter->transform($request);
-
-        $replies = Reply::where($filterItems);
-
-        if($request->query('includeReplier')) {
-            $replies = $replies->with('includeReplier');
-        }
-
-        return new ReplyCollection($replies->paginate());
+        return new ReplyCollection($replies->paginate()->with('repliers'));
     }
 
     /**
@@ -35,7 +26,7 @@ class ReplyController extends Controller
      */
     public function store(StoreReplyRequest $request)
     {
-        return new StoreReplyRequest(Reply::create($request->all()));
+        return new ReplyResource(Reply::create($request->all()));
     }
 
     /**
@@ -43,7 +34,7 @@ class ReplyController extends Controller
      */
     public function show(Reply $Reply)
     {
-        return new ReplyResource($Reply);
+
     }
 
     /**
@@ -51,7 +42,7 @@ class ReplyController extends Controller
      */
     public function update(StoreReplyRequest $request, Reply $Reply)
     {
-        return new ReplyResource($Reply->update($request->all()));
+        return $Reply->update($request->all());
     }
 
     /**

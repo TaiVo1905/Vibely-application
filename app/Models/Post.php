@@ -7,28 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $fillable = [
-        'user_post_id',
+        'poster_id',
         'content',
         'status'
     ];
 
-    public function User() {
-        return $this->belongsTo(Like::class);
+    public function poster() {
+        return $this->belongsTo(User::class, 'poster_id');
     }
 
-    public function Likes() {
-        return $this->hasMany(Like::class);
+    public function likers() {
+        return $this->belongsToMany(User::class, 'likes', 'post_id', 'user_like_id');
     }
 
-    public function Shares() {
-        return $this->hasMany(Share::class);
+    public function sharers() {
+        return $this->belongsToMany(User::class, 'shares', 'post_id', 'user_share_id');
     }
 
-    public function Comments() {
-        return $this->hasMany(Comment::class);
+    public function commenters() {
+        return $this->belongsToMany(User::class, 'comments', 'post_id', 'commenter_id');
     }
 
-    public function PostImages() {
-        return $this->hasMany(PostImage::class);
+    public function postImages() {
+        return $this->hasMany(PostImage::class, 'post_id');
     }
 }

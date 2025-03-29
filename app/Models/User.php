@@ -46,23 +46,23 @@ class User extends Authenticatable
         ];
     }
 
-    public function Posts() {
-        return $this->hasMany(Post::class);
+    public function posts() {
+        return $this->hasMany(Post::class, 'poster_id');
     }
 
-    public function Replies() {
-        return $this->hasMany(Reply::class);
+    public function replies() {
+        return $this->hasMany(Reply::class, 'replier_id');
     }
 
-    public function Shares() {
-        return $this->hasMany(Share::class);
+    public function shares() {
+        return $this->hasMany(Share::class, 'user_share_id');
     }
 
-    public function Comments() {
-        return $this->hasMany(Comment::class);
+    public function comments() {
+        return $this->hasMany(Comment::class, 'commenter_id');
     }
 
-    public function Likes() {
-        return $this->hasMany(Like::class);
+    public function likes() {
+        return $this->hasMany(Like::class, 'user_like_id');
     }
 }

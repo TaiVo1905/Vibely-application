@@ -8,13 +8,13 @@ use App\Filters\ApiFilter;
 class PostFilter extends ApiFilter {
 
     protected $safeParams = [
-        'user_post_id' => 'eq',
+        'poster_id' => 'eq',
         'content' => 'ceq',
         'status' => 'eq'
     ];
 
     protected $columnMap = [
-        'userPostId' => 'user_post_id',
+        'userPostId' => 'poster_id',
     ];
 
     protected $operatorMap = [

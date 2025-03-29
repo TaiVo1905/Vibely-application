@@ -12,11 +12,11 @@ class Share extends Model
         'user_share_id'
     ];
 
-    public function Post() {
-        return $this->belongsTo(Post::class);
+    public function post() {
+        return $this->belongsTo(Post::class, 'post_id');
     }
 
-    public function User() {
-        return $this->belongsTo(User::class);
+    public function user() {
+        return $this->belongsTo(User::class, 'user_share_id');
     }
 }

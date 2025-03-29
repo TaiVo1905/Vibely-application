@@ -24,11 +24,7 @@ class UserController extends Controller
 
         $users = User::where($filterItems);
 
-        if($request->query('includePosts')) {
-            $users = $users->with('includePosts');
-        }
-
-        return new UserCollection($users->paginate());
+        return new UserCollection($users->paginate()->appends($request->query()));
     }
 
     /**
@@ -45,7 +41,6 @@ class UserController extends Controller
     public function show(User $user)
     {
         return new UserResource($user);
-
     }
 
     /**

@@ -17,7 +17,7 @@ class ReplyResource extends JsonResource
         return [
             'commentId' => $this->comment_id,
             'replierId' => $this->replier_id,
-            'replier' => new UserResource($this->whenLoaded('includeReplier')),
+            'replier' => new UserResource($this->whenLoaded('replier')),
             'content' => $this->content
         ];
     }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Share extends Model
+class Like extends Model
 {
     //
     protected $fillable = [
@@ -12,11 +12,11 @@ class Share extends Model
         'user_like_id'
     ];
 
-    public function Post() {
-        return $this->belongsTo(Post::class);
+    public function post() {
+        return $this->belongsTo(Post::class, 'post_id');
     }
 
-    public function User() {
-        return $this->belongsTo(User::class);
+    public function liker() {
+        return $this->belongsTo(User::class, 'user_like_id');
     }
 }

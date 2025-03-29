@@ -15,15 +15,15 @@ class PostResource extends JsonResource
     public function toArray(Request $request): array
     {
         return[
-            'userPostId' => $this->user_post_id,
-            'poster' => new UserResource($this->whenLoaded('includePoster')),
+            'posterId' => $this->poster_id,
+            'poster' => new UserResource($this->whenLoaded('poster')),
             'content' => $this->content,
             'status' => $this->status,
             'updateAt' => $this->update_at,
-            'likes' => LikeResource::collection($this->whenLoaded('includeLikes')),
-            'shares' => ShareResource::collection($this->whenLoaded('includeShares')),
-            'postImages' => PostImageResource::collection($this->whenLoaded('includePostImages')),
-            'comments' => CommentResource::collection($this->whenLoaded('includeComments')),
+            'postImages' => PostImageResource::collection($this->whenLoaded('postImages')),
+            'likers' => UserResource::collection($this->whenLoaded('likers')),
+            'sharers' =>UserResource::collection($this->whenLoaded('sharers')),
+            'commenters' => UserResource::collection($this->whenLoaded('commenters')),
         ];
     }
 }

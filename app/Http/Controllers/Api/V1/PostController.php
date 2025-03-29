@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Filters\V1\PostFilter;
 use App\Models\Post;
+use App\Http\Resources\V1\PostResource;
 use App\Http\Resources\V1\PostCollection;
 use App\Http\Requests\V1\StorePostRequest;
+use App\Http\Requests\V1\UpdatePostRequest;
 
 
 class PostController extends Controller
@@ -21,21 +23,13 @@ class PostController extends Controller
 
         $filterItems = $filter->transform($request);
 
-        $posts = Post::where($filterItems);
-
-        $includes = ['includePoster',
-                    'includeLikes',
-                    'includeShares',
-                    'includePostImages',
-                    'includeComments',];
-
-        foreach ($includes as $include) {
-            if($request->query($include)) {
-                $posts = $posts->with($include);
-            }
+        if($request->user) {
+            $filterItems[] = ['poster_id', '=', $request->user];
         }
 
-        return new PostCollection($posts->paginate());
+        $posts = Post::where($filterItems);
+
+        return new PostCollection($posts->with('poster')->paginate());
     }
 
     /**
@@ -43,30 +37,44 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        return new StorePostRequest(Post::create($request->all()));
+        return new PostResource((Post::create($request->all())->load('poster')));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $Post)
+    public function show(Post $post)
     {
-        return new PostResource($Post);
+        return new PostResource($post->load('poster'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(StorePostRequest $request, Post $Post)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        return new PostResource($Post->update($request->all()));
+        return $post->update($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $Post)
+    public function destroy(Post $post)
     {
-        return $Post->delete();
+        return $post->delete();
+    }
+
+    public function interactions(Request $request) {
+        $filter = new PostFilter();
+
+        $filterItems = $filter->transform($request);
+
+        if($request->post) {
+            $filterItems[] = ['poster_id', '=', $request->post];
+        }
+
+        $posts = Post::where($filterItems);
+
+        return new PostCollection($posts->with(['poster', 'likers', 'sharers', 'commenters'])->paginate());
     }
 }

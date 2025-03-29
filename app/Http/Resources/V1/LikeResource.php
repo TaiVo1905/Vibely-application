@@ -15,9 +15,8 @@ class LikeResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'postId' => $this->post_id,
             'userLikeId' => $this->user_like_id,
-            'UserLike' => new UserResource($this->whenLoaded('includeLiker'))
+            'UserLike' => new UserResource($this->whenLoaded('liker'))
         ];
     }
 }

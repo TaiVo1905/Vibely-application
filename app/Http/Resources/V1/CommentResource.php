@@ -18,8 +18,8 @@ class CommentResource extends JsonResource
             'postId' => $this->post_id,
             'content' => $this->content,
             'commenterId' => $this->commenter_id,
-            'commenter' => new UserResource($this->whenLoaded('includeCommenter')),
-            'postReplies' => ReplyResource::collection($this->whenLoaded('includePostReplies'))
+            'commenter' => new UserResource($this->whenLoaded('commenter')),
+            'postReplies' => ReplyResource::collection($this->whenLoaded('replies'))
         ];
     }
 }

@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Filters\V1\LikeFilter;
 use App\Requests\V1\StoreLikeRequest;
 use App\Models\Like;
-use App\Http\Resources\LikeCollection;
-use App\Http\Resources\LikeResource;
+use App\Http\Resources\V1\LikeCollection;
+use App\Http\Resources\V1\LikeResource;
 
 class LikeController extends Controller
 {
@@ -17,17 +16,11 @@ class LikeController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new LikeFilter();
+        $likes = Like::where([['post_id', '=', $request->post]]);
 
-        $filterItems = $filter->transform($request);
+        $likes->with('liker');
 
-        $likes = Like::where($filterItems);
-
-        if($request->query('includeLiker')) {
-            $likes->with('includeLiker');
-        }
-
-        return new LikeCollection($likes);
+        return new LikeCollection($likes->paginate());
     }
 
     /**
@@ -35,7 +28,7 @@ class LikeController extends Controller
      */
     public function store(StoreLikeRequest $request)
     {
-        return new LikeResource(User::create($request->all()));
+        return new LikeResource(Like::create($request->all()));
     }
 
     /**
@@ -43,7 +36,7 @@ class LikeController extends Controller
      */
     public function show(Like $like)
     {
-        return new LikeResource($like);
+
     }
 
     /**

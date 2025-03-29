@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Filters\V1\PostImageFilter;
 use App\Models\PostImage;
 use App\Http\Resources\V1\PostImageCollection;
 use App\Http\Requests\V1\StorePostImageRequest;
@@ -17,11 +16,8 @@ class PostImageController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new PostImageFilter();
 
-        $filterItems = $filter->transform($request);
-
-        $postImages = PostImage::where($filterItems);
+        $postImages = PostImage::where([['post_id', '=', $request->post]]);
 
         return new PostImageCollection($postImages->paginate());
     }
@@ -31,7 +27,7 @@ class PostImageController extends Controller
      */
     public function store(StorePostImageRequest $request)
     {
-        return new StorePostImageRequest(PostImage::create($request->all()));
+        return new PostImageResource(PostImage::create($request->all()));
     }
 
     /**
@@ -39,15 +35,15 @@ class PostImageController extends Controller
      */
     public function show(PostImage $postImage)
     {
-
+        return new PostImageResource($postImage);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(StorePostImageRequest $request, PostImage $postImage)
+    public function update(UpdatePostImageRequest $request, PostImage $postImage)
     {
-        //
+        return $postImage->update($request->all());
     }
 
     /**

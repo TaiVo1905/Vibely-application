@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Filters\V1\ShareFilter;
 use App\Requests\V1\StoreShareRequest;
 use App\Models\Share;
-use App\Http\Resources\ShareCollection;
-use App\Http\Resources\ShareResource;
+use App\Http\Resources\V1\ShareCollection;
+use App\Http\Resources\V1\ShareResource;
 
 class ShareController extends Controller
 {
@@ -17,17 +16,12 @@ class ShareController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new ShareFilter();
+        $shares = Share::where([['post_id', '=', $request->post]]);
 
-        $filterItems = $filter->transform($request);
+        $shares->with('user');
 
-        $shares = Share::where($filterItems);
 
-        if($request->query('includeLiker')) {
-            $shares->with('includeLiker');
-        }
-
-        return new ShareCollection($shares);
+        return new ShareCollection($shares->paginate());
     }
 
     /**
@@ -43,6 +37,7 @@ class ShareController extends Controller
      */
     public function show(Share $share)
     {
+
         return new ShareResource($share);
     }
 

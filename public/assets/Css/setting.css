@@ -2,7 +2,7 @@ body {
     background-color: #F5F5F5;
 }
 
-.content {
+.set-content {
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@ body {
 }
 
 .setting-item.active {
-    background-color: #007BFF;
+    background-color: #254985;
     color: white;
 }
 

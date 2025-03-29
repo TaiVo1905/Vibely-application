@@ -44,6 +44,14 @@ Route::get('pri', function () {
     return view('components.privacy');
 });
 
-Route::get('setting', function(){
+
+
+
+
+Route::get('/mt', function () {
+        return view('layouts.MasterLayout');
+});
+
+Route::get('/setting', function () {
     return view('pages.setting');
 });

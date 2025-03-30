@@ -44,6 +44,18 @@ Route::get('pri', function () {
     return view('components.privacy');
 });
 
+Route::get('mt', function () {
+    return view('Layouts.MasterLayout');
+});
+
+Route::get('mainlayout', function () {
+    return view('Layouts.MainLayout');
+});
+
 Route::get('/index', function () {
     return view('pages.index');
+});
+
+Route::get('/explore', function () {
+    return view('pages.explore');
 });

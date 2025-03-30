@@ -6,19 +6,14 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('assets/Css/MainLayout.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/chats.css') }}">
 @endsection
 
 @section('content')
-<div class="activity-panel">
-    @yield('activity-panel')
-</div>
-
-<div class="post-container">
+    <div class="activity-panel">
+        @yield('activity-panel')
+    </div>
     @yield('main-content')
-</div>
-
-<div class="chat-section">
-    @yield('chat-section')
-</div>
+    <div class="chat-section">
+        @yield('chat-section')
+    </div>
 @endsection

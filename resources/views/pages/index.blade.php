@@ -5,20 +5,15 @@
 @section('search-placeholder', 'Search anything here...')
 
 @section('styles')
-    @parent
-    <link rel="stylesheet" href="{{ asset('assets/Css/Home.css') }}">
+@parent
+<link rel="stylesheet" href="{{ asset('assets/css/chats.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/.css') }}">
 @endsection
 
 @section('main-content')
-    <div class="posts-list">
-        <div class="create-post">
-            <img src="{{ asset('images/icon/yellowdp-1.png') }}" alt="User Avatar" class="user-avatar">
-            <input type="text" placeholder="What's on your mind?" class="post-input">
-        </div>
-        <x-post />
-    </div>
+@include('components.post')
 @endsection
 
 @section('chat-section')
-    @include('components.chats')
+@include('components.chats')
 @endsection

@@ -1,0 +1,17 @@
+.content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 1.5rem;
+    margin-left: 70px;
+    padding: 1.5rem;
+}
+
+.activity-panel,
+.post-container,
+.chat-section {
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

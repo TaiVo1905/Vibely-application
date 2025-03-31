@@ -11,7 +11,6 @@
 @section('content')
 <div class="activity-panel">
     <h2>Recent Activity</h2>
-    <!-- Activity content will be loaded here -->
 </div>
 
 <div class="post-container">

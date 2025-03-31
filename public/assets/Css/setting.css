@@ -49,12 +49,12 @@ body {
     color: white; 
 }
 
-.setting-item.active {
+.setting-item:hover {
     background-color: #254985;
     color: white;
 }
 
-.setting-item.active i, .fas:active i{
+.setting-item:hover i, .fas:hover i{
     color: white; 
 }
 

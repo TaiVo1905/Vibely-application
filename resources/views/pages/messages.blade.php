@@ -9,5 +9,7 @@
 @endsection
 
 @section('content')
-
+    @include('components.chats')
+    @include('components.conversation')
+    
 @endsection

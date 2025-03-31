@@ -19,7 +19,7 @@
             <li class="setting-item"><i class="fas fa-cogs" style="color: #00095E; font-size: 25px;" class="icon"></i> Apps and websites</li>
             <li class="setting-item"><i class="fas fa-key" style="color: #00095E; font-size: 25px;" class="icon"></i> Change Password</li>
             <li class="setting-item"><i class="fas fa-history" style="color: #00095E; font-size: 25px;" class="icon"></i> Activity log</li>
-            <li class="setting-item active"><i class="fas fa-shield-alt"></i> Privacy and Security</li>
+            <li class="setting-item"><i class="fas fa-shield-alt"></i> Privacy and Security</li>
             <li class="setting-item"><i class="fas fa-sliders-h" style="color: #00095E; font-size: 25px;" class="icon"></i> Others</li>
             <li class="setting-item"><i class="fas fa-sign-out-alt" style="color: #00095E; font-size: 25px;" class="icon"></i> Log Out</li>
         </ul>

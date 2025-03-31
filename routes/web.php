@@ -55,3 +55,7 @@ Route::get('/mt', function () {
 Route::get('/setting', function () {
     return view('pages.setting');
 });
+
+Route::get('/mess', function () {
+    return view('pages.messages');
+});

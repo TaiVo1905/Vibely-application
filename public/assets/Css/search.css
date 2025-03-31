@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.search-container input {
+.search-container .input {
     border: none;
     outline: none;
     flex: 1;
@@ -17,7 +17,7 @@
     background-color: #F3F6F8;
 }
 
-.search-container input::placeholder {
+.search-container .input::placeholder {
     color: #999;
 }
 
@@ -27,8 +27,10 @@
 
 .search-icon {
     margin-left: 20px;
+    margin-top: 15px;
 }
 
 .setting-icon {
     margin-right: 20px;
+    margin-top: 15px;
 }

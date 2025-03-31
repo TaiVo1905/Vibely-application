@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="content-privacy">
-        <div class="title">
+        <div class="title-privacy">
             <i class="fas fa-shield-alt" style="color: #00095E; font-size: 25px;" class="icon"></i> 
             <div class="des-title">Privacy and Security Settings</div>
         </div>

@@ -9,17 +9,13 @@
 
 </head>
 <body>
-    <div class="content">
+    <div class="content-chat">
         <div class="title">
             <h2>Messages </h2>
             <img src="{{asset('images/messages.svg')}}" alt="messages">
         </div>
         @include('components.search_bar')
-        {{-- <div class="search-container">
-            <img src="{{asset('images/search.svg')}}" alt="search" class="search-icon">
-            <input type="text" placeholder="Search messages">
-            <img src="{{asset('images/setting.svg')}}" alt="" class="setting-icon">
-        </div> --}}
+        
         <div class="tab-container">
             <div class="tab-active">Primary</div>
             <div class="tab">General</div>

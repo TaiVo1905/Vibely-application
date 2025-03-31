@@ -11,16 +11,18 @@
 @section('content')
 
 <div class="activity-panel">
-    <h2>Recent Activity</h2>
+    @include('components.profile')
 </div>
 
 <div class="post-container">
     @yield('main-content')
+    @include('components.post')
+
 </div>
 
 <div class="chat-section">
-    <h2>Messages</h2>
-    <!-- Chat content will be loaded here -->
+    @include('components.chats')
+
 </div>
     <div class="activity-panel">
         @yield('activity-panel')

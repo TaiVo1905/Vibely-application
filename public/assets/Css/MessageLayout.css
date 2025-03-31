@@ -1,7 +1,7 @@
 /* MessageLayout.css */
 .content {
     flex: 1;
-    display: grid !important;
+    display: flex !important;
     grid-template-columns: 350px 1fr !important;
     gap: 1.5rem;
     margin-left: 70px;
@@ -9,7 +9,10 @@
     min-height: calc(100vh - 70px);
 }
 
+
 /* .message-list {
+=======
+.message-list {
     background-color: var(--bg-color) !important;
     border-radius: 15px;
     padding: 1rem;
@@ -26,4 +29,5 @@
     display: flex !important;
     flex-direction: column;
     height: calc(100vh - 110px);
-} */
+
+}

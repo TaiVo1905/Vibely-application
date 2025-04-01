@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3e5f5;
+}
+
+.container {
+    display: flex;
+    width: 900px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.left-section {
+    width: 50%;
+    padding: 40px;
+    background: url("../../images/travle.png") no-repeat center center;
+    background-size: cover;
+    text-align: left;
+    color: #333;
+}
+
+.left-section .logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.left-section h1 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.highlight {
+    color: #000;
+    font-weight: bold;
+}
+
+.phone {
+    font-size: 16px;
+    color: #d32f2f;
+}
+
+/* Right Section */
+.right-section {
+    width: 50%;
+    background: white;
+    padding: 40px;
+}
+
+.login-box h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Password Input */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Forgot Password */
+.forgot-password {
+    font-size: 12px;
+    text-align: right;
+    display: block;
+    margin-top: 5px;
+    color: #5e35b1;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    background: #1e88e5;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.login-btn:hover {
+    background: #1565c0;
+}
+
+/* Social Login */
+.easy-login {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.google, .facebook {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.google {
+    background: #db4437;
+    color: white;
+}
+
+.facebook {
+    background: #3b5998;
+    color: white;
+}

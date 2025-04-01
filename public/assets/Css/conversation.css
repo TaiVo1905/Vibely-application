@@ -1,0 +1,55 @@
+.content-conversation {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.con-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-conver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.content-detail {
+    max-height: 500px; 
+    overflow-y: auto; 
+    padding: 10px;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.content-detail::-webkit-scrollbar {
+    display: none; 
+}
+
+.con-footer {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.icon, .send-icon {
+    color: #A87DFF;
+    font-size: 30px;
+    margin-right: 25px; 
+    cursor: pointer;
+}
+
+.message-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+}

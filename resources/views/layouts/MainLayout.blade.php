@@ -10,9 +10,13 @@
 
 @section('content')
     <div class="activity-panel">
-        @yield('activity-panel')
+        @yield('section-left')
     </div>
-    @yield('main-content')
+
+    <div class="post-container">
+        @yield('main-content')
+    </div>
+
     <div class="chat-section">
         @yield('chat-section')
     </div>

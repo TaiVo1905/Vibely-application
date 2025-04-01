@@ -6,14 +6,17 @@
 
 @section('styles')
 @parent
+<link rel="stylesheet" href="{{ asset('assets/css/mainLayout.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/search.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/chats.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/.css') }}">
+<link rel="stylesheet" href="{{asset('assets/css/chat.css')}}">
+
 @endsection
 
 @section('main-content')
-@include('components.post')
+    @include('components.post')
 @endsection
 
 @section('chat-section')
-@include('components.chats')
+    @include('components.chats')
 @endsection

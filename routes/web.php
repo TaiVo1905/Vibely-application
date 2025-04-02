@@ -13,5 +13,5 @@ Route::controller(PageController::class)->group( function() {
     Route::get("/explore", "explore");
     Route::get("/privacy", "privacy");
     Route::get("/settings", "settings");
-
+    Route::get("/email", "email");
 });

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\VerifyEmail;
+use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -34,5 +37,10 @@ class PageController extends Controller
 
     public function conversation() {
         return view('pages.conversation');
+    }
+
+    public function email(){
+        Mail::to('kimtuyen10072004@gmail.com')->send(new VerifyEmail());
+
     }
 }

@@ -29,7 +29,7 @@ class PostController extends Controller
 
         $posts = Post::where($filterItems);
 
-        return new PostCollection($posts->with('poster')->paginate());
+        return new PostCollection($posts->with(['poster', 'postImages'])->paginate());
     }
 
     /**

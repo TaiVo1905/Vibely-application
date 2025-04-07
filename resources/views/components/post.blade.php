@@ -1,10 +1,10 @@
-<div class="post-container">
-    <div class="post-header">
+<div id="posts-container">
+    {{-- <div class="post-header">
         <div class="user-info">
-            <img src="{{ asset('images/icon/avatar.png') }}" alt="Avatar" class="user-avatar">
+            <img src="{{ asset('images/icon/avatar.png') }}" alt="Avatar" class="user-avatar" id="avatar">
             <div>
-                <div class="user-name">Twin Bee</div>
-                <div class="user-location">Fort William, United Kingdom</div>
+                <div class="user-name" id="name">Twin Bee</div>
+                <div class="user-location" id="email">Fort William, United Kingdom</div>
             </div>
         </div>
         <img src="{{ asset('images/icon/gach.png') }}" width="20">
@@ -23,5 +23,7 @@
 
     <div class="post-caption">
         <span>Twin Bee</span> Ain't no mountain high enough, ain't no valley low enough, ain't no river wide enough, to keep me from getting to you babe.
-    </div>
+    </div> --}}
 </div>
+
+

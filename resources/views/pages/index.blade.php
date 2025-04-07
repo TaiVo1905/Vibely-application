@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="{{asset('assets/css/chat.css')}}">
 
 @endsection
+@section('section-left')
+    @include('components.activity')
+@endsection
 
 @section('main-content')
     @include('components.post')

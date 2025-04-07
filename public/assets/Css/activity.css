@@ -1,0 +1,104 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.see-all {
+    float: right;
+    color: #8391a1;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #333;
+}
+
+.mention {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f1f5f9;
+}
+
+.mention img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.mention-text {
+    font-size: 13px;
+    color: #7d8a9c;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.activity-details {
+    flex-grow: 1;
+}
+
+.activity-details strong {
+    font-size: 14px;
+    color: #333;
+}
+
+.activity-details span {
+    font-size: 12px;
+    color: #7d8a9c;
+}
+
+.follow-btn {
+    background: #ebebff;
+    color: #5f68ff;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+.follow-btn img{
+    width: 30px;  
+    height: 30px;
+    padding: 0;   
+    display: block; 
+    margin-left:10px;
+
+}
+
+.post-thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}

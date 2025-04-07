@@ -35,4 +35,8 @@ class PageController extends Controller
     public function conversation() {
         return view('pages.conversation');
     }
+
+    public function comment() {
+        return view('components.comment');
+    }
 }

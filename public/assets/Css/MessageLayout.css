@@ -1,0 +1,29 @@
+/* MessageLayout.css */
+.content {
+    flex: 1;
+    display: grid !important;
+    grid-template-columns: 350px 1fr !important;
+    gap: 1.5rem;
+    margin-left: 70px;
+    padding: 1.5rem;
+    min-height: calc(100vh - 70px);
+}
+
+.message-list {
+    background-color: var(--bg-color) !important;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat-content {
+    background-color: var(--bg-color) !important;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    flex-direction: column;
+    height: calc(100vh - 110px);
+}
